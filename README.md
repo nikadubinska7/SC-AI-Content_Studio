@@ -49,8 +49,7 @@ supplychain-ai-content-studio/
 ├── data/
 │   └── outputs/
 ├── docs/
-│   ├── CODEX_RULES.md
-│   └── uniqueness_evidence.md
+│   └── CODEX_RULES.md
 ├── config/
 │   └── vscode_agent.json
 ├── knowledge_base/
@@ -173,17 +172,26 @@ pytest
 streamlit run src/ui_app.py
 ```
 
+On first use, click **Rebuild local index** in the sidebar. This embeds the markdown files and stores the chunks in local ChromaDB under `data/chroma/`.
+
+You can also rebuild the index from the command line:
+
+```bash
+python -m src.main --rebuild-index
+```
+
 ## Expected User Flow
 
 1. Open the Streamlit app.
-2. Enter a content topic or request.
-3. Choose output type:
+2. Rebuild the local index if no chunks are indexed yet.
+3. Enter a content topic or request.
+4. Choose output type:
    - LinkedIn content ideas
    - Content brief
    - Draft LinkedIn post
-4. Generate content.
-5. Review retrieved sources.
-6. Edit manually before publishing on LinkedIn.
+5. Generate content.
+6. Review retrieved sources.
+7. Edit manually before publishing on LinkedIn.
 
 ## Demo Flow
 
