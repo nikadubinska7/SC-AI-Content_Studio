@@ -1,0 +1,6 @@
+name: supplychain-ai-content
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+prefix: /opt/anaconda3/envs/supplychain-ai-content

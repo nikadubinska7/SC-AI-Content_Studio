@@ -1,0 +1,54 @@
+{
+  "project_name": "SupplyChain AI Content Studio",
+  "agent": "Codex / VSCode coding agent",
+  "primary_instruction_file": "AGENTS.md",
+  "supporting_instruction_files": [
+    "docs/CODEX_RULES.md",
+    "PROJECT_REQUIREMENTS.md"
+  ],
+  "development_mode": "human-reviewed AI-assisted coding",
+  "mvp_scope": {
+    "ui": "Streamlit",
+    "language": "Python 3.11",
+    "knowledge_base_format": "Markdown",
+    "vector_store": "ChromaDB",
+    "llm_provider": "OpenAI",
+    "embeddings_provider": "OpenAI"
+  },
+  "expected_agent_workflow": [
+    "read project requirements",
+    "read AGENTS.md",
+    "read Codex rules",
+    "propose implementation stage",
+    "implement stage",
+    "explain what changed",
+    "ask user to run tests or app when needed",
+    "wait for user feedback before expanding scope"
+  ],
+  "allowed_tasks": [
+    "implement project modules",
+    "write tests",
+    "debug errors",
+    "improve documentation",
+    "refactor for clarity",
+    "build the Streamlit UI after the core pipeline is implemented"
+  ],
+  "restricted_tasks": [
+    "commit secrets",
+    "add automated LinkedIn publishing",
+    "add user authentication",
+    "add cloud deployment",
+    "replace Streamlit without approval",
+    "replace ChromaDB without approval",
+    "expand MVP scope without approval"
+  ],
+  "run_commands": {
+    "install_dependencies": "pip install -r requirements.txt",
+    "run_tests": "pytest",
+    "run_app": "streamlit run src/ui_app.py"
+  },
+  "environment_variables": [
+    "OPENAI_API_KEY"
+  ],
+  "human_review_required": true
+}
