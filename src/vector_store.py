@@ -2,27 +2,17 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import chromadb
 
 from src.chunker import TextChunk
+from src.retriever import VectorSearchResult
 
 
 DEFAULT_CHROMA_PATH = "data/chroma"
 DEFAULT_COLLECTION_NAME = "supplychain_content_chunks"
-
-
-@dataclass(frozen=True)
-class VectorSearchResult:
-    """A vector search result with source metadata."""
-
-    id: str
-    text: str
-    metadata: dict[str, Any]
-    distance: float | None = None
 
 
 def _clean_metadata(metadata: dict[str, Any]) -> dict[str, str | int | float | bool]:
